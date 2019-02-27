@@ -1,0 +1,15 @@
+<div id="posts" class="container rounded"
+     [ngClass]="{'list-group-item': likes == 0, 'list-group-item-success': likes > 0, 'list-group-item-danger': likes < 0}">
+    <div class="d-flex bd-highlight">
+        <h2 class="p-2 flex-grow-1 bd-highlight">{{ title }}</h2>
+        <p class="text-secondary p-2 bd-highlight">{{ date | date }}</p>
+    </div>
+    <p>{{ content }}</p>
+    <div class="d-flex bd-highlight mb-3">
+        <button class="btn btn-success p-2 bd-highlight" (click)="like(likes)">Love it!</button>
+        <button class="btn btn-danger p-2 bd-highlight" (click)="dislike(likes)">Don't love it!</button>
+        <button class="btn btn-danger ml-auto p-2 bd-highlight" type="submit" (click)="deletePost(index)">Supprimer</button>
+    </div>
+    <hr>
+    <p>Likes : {{ likes }}</p>
+</div>
